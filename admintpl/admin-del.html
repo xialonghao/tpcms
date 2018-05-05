@@ -1,0 +1,270 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>用户回收站</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body>
+<section class="Hui-article-box">
+  <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 回收站 </nav>
+<div class="pd-20">
+  <h1>回收站</h1>
+  <div class="cl pd-5 bg-1 bk-gray mt-20">
+    <input class="btn btn-danger radius" type="button" value="清空">
+    <input class="btn btn-success radius" type="button" value="还原">
+    <span class="r">共有数据：<strong>88</strong> 条</span>
+  </div>
+  <table class="table table-border table-bordered table-hover table-bg table-sort">
+    <thead>
+      <tr class="text-c">
+        <th width="25"><input type="checkbox" name="" value=""></th>
+        <th width="80">ID</th>
+        <th width="60">用户名</th>
+        <th width="90">手机</th>
+        <th width="100">邮箱</th>
+        <th width="70">角色</th>
+        <th width="130">注册时间</th>
+        <th width="100">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-c">
+        <td><input type="checkbox" value="1" name=""></td>
+        <td>1</td>
+        <td>admin</td>
+        <td>13345080795</td>
+        <td>admin@mail.com</td>
+        <td>超级管理员</td>
+        <td>2014-6-11 11:11:42</td>
+        <td class="f-14 user-manage">
+          <a style="text-decoration:none" href="javascript:;" title="还原" class="Hui-iconfont Hui-iconfont-chexiao"></a>
+          <a style="text-decoration:none" href="javascript:;" title="删除" class="Hui-iconfont Hui-iconfont-del3"></a>
+        </td>
+      </tr>
+      <tr class="text-c">
+        <td><input type="checkbox" value="1" name=""></td>
+        <td>2</td>
+        <td>taotao</td>
+        <td>13341288112</td>
+        <td>taotao@mail.com</td>
+        <td>管理员</td>
+        <td>2014-6-11 11:11:42</td>
+        <td class="f-14 user-manage">
+          <a  style="text-decoration:none" href="javascript:;" title="还原" class="Hui-iconfont Hui-iconfont-chexiao"></a>
+          <a style="text-decoration:none" href="javascript:;" title="删除" class="Hui-iconfont Hui-iconfont-del3"></a>
+        </td>
+      </tr>
+      <tr class="text-c">
+        <td><input type="checkbox" value="1" name=""></td>
+        <td>3</td>
+        <td>zhangyida</td>
+        <td>15264954549</td>
+        <td>zhangyida@mail.com</td>
+        <td>管理员</td>
+        <td>2014-6-11 11:11:42</td>
+        <td class="f-14 user-manage">
+          <a  style="text-decoration:none" href="javascript:;" title="还原" class="Hui-iconfont Hui-iconfont-chexiao"></a>
+          <a style="text-decoration:none" href="javascript:;" title="删除" class="Hui-iconfont Hui-iconfont-del3"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="pageNav" class="pageNav"></div>
+</div>
+</section>
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script>
+//弹窗
+function modaldemo(){
+  $("#modal-demo").modal("show");
+}
+//消息框
+function modalalertdemo(){
+  $.Huimodalalert('我是消息框，2秒后我自动滚蛋！',2000);
+}
+$(function(){
+  $(".input-text,.textarea").Huifocusblur();
+  
+  //幻灯片
+  jQuery("#slider-3 .slider").slide({mainCell:".bd ul",titCell:".hd li",trigger:"click",effect:"leftLoop",autoPlay:true,delayTime:700,interTime:3000,pnLoop:false,titOnClassName:"active"});
+  
+  $(".panel").Huifold({
+    titCell:'.panel-header',
+    mainCell:'.panel-body',
+    type:1,
+    trigger:'click',
+    className:"selected",
+    speed:"first",
+  });
+  
+  //邮箱提示  
+  $("#email").emailsuggest();
+  
+  //checkbox 美化
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
+  
+  //日期插件
+  $("#datetimepicker").datetimepicker({
+      format: 'yyyy-mm-dd',
+    minView: "month",
+    todayBtn:  1,
+    autoclose: 1,
+    endDate : new Date()
+  }).on('hide',function(e) {
+    //此处可以触发日期校验。
+  });
+  
+  /*+1 -1效果*/
+  $("#spinner-demo").Huispinner({
+    value:1,
+    minValue:1,
+    maxValue:99,
+    dis:1
+  });
+  
+  $(".textarea").Huitextarealength({
+    minlength:10,
+    maxlength:200.
+  });
+  
+  $("#demoform").validate({
+    rules:{
+      email:{
+        required:true,
+        email:true,
+      },
+      username:{
+        required:true,
+        minlength:4,
+        maxlength:16
+      },
+      telephone:{
+        required:true,
+        isMobile:true,
+      },
+      password:{
+        required:true,
+        isPwd:true,
+      },
+      password2:{
+        required:true,
+        equalTo: "#password"
+      },
+      sex:{
+        required:true,
+      },
+      datetimepicker:{
+        required:true,  
+      },
+      checkbox2:{
+        required:true,
+      },
+      city:{
+        required:true,
+      },
+      website:{
+        required:true,
+        url:true,
+      },
+      beizhu:{
+        maxlength:500,
+      }
+    },
+    onkeyup:false,
+    focusCleanup:true,
+    success:"valid",
+    submitHandler:function(form){
+      $("#modal-shenqing-success").modal("show");
+      $(form).ajaxSubmit();
+    }
+  });
+
+  //选项卡
+  $("#HuiTab-demo1").Huitab({
+    index:0
+  });
+  
+  $("#Huitags-demo1").Huitags();
+  
+  //返回顶部
+  $.Huitotop();
+  
+  //hover效果
+  $('.maskWraper').Huihover();
+  
+  //星级评价
+  $("#star-1").raty({
+    hints: ['1','2', '3', '4', '5'],//自定义分数
+    starOff: 'iconpic-star-S-default.png',//默认灰色星星
+    starOn: 'iconpic-star-S.png',//黄色星星
+    path: 'static/h-ui/images/star',//可以是相对路径
+    number: 5,//星星数量，要和hints数组对应
+    showHalf: true,
+    targetKeep : true,
+    click: function (score, evt) {//点击事件
+      //第一种方式：直接取值
+      $("#result-1").html('你的评分是'+score+'分');
+    }
+  });
+
+  $( ".ui-sortable" ).sortable({
+    //connectWith: ".panel",
+    items:".panel",
+    handle: ".panel-header",
+    //delay: 300, //时间延迟
+    //distance: 15, //距离延迟
+    placeholder: "ui-state-highlight", //占位符样式
+    update: function(event, ui){
+      
+    }
+  }).disableSelection();
+
+  var _bodyHeight = $(window).height();
+  var _doch = $(document).height();
+  $(".containBox").height(_bodyHeight);
+
+  /*左右滑动菜单*/
+    $(".JS-nav-toggle").click(function() {
+    $("body").addClass('sideBox-open');
+        $(".containBox-bg").height(_bodyHeight).show();
+    });
+    $(".containBox-bg").click(function() {
+    $(this).hide();
+    $("body").removeClass('sideBox-open');
+    });
+});
+</script>
+</body>
+</html>

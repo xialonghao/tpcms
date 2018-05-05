@@ -1,0 +1,183 @@
+﻿<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+	<!--/meta 作为公共模版分离出去-->
+	{include file="public/header"}
+	<!--/_header 作为公共模版分离出去-->
+
+	<!--_menu 作为公共模版分离出去-->
+	{include file="public/menu"}
+	<!--/_menu 作为公共模版分离出去-->
+
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="index.html" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">用户管理</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">用户列表</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>用户列表</h1> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<span class="f-l">
+						<input class="btn btn-primary radius" type="button" value="新增" onClick="window.location.href='useradd.html'">
+						<input class="btn btn-success radius" type="button" value="启用">
+						<input class="btn btn-warning radius" type="button" value="禁用">
+						<input class="btn btn-danger radius" type="button" value="删除">
+					</span>
+					<span class="f-r">
+						<input type="text" name="" id="" placeholder="请输入配置名称" style="width:250px" class="input-text"><button name="" id="" class="btn btn-success" type="submit"> 搜索</button>
+					</span>
+				</div>
+				<div class="panel-body">
+					<table class="table table-border table-bordered table-hover">
+      					 <thead>
+			              <tr class="text-c">
+			              	<th><input type="checkbox" id="checkbox-1"></th>
+			                <th>UID</th>
+			                <th>昵称</th>
+			                <th>积分</th>
+			                <th>登录次数</th>
+			                <th>最后登录时间</th>
+			                <th>最后登录IP</th>
+			                <th>状态</th>
+			                <th>操作</th>
+			              </tr>
+			            </thead>
+			            <tbody>
+			              <tr class="text-c">
+			              	<th><input type="checkbox" id="checkbox-1" class="ids"></th>
+			                <th>1</th>
+			                <td>于芝正</td>
+			                <td>3</td>
+			                <td>3</td>
+			                <td>2017-9-19</td>
+			                <td>127.0.0.1</td>
+			                <td>登录</td>
+			                <td>
+									<input class="btn btn-warning radius" type="button" value="禁用">
+								<input class="btn btn-danger radius" type="button" value="删除">
+								<input class="btn btn-success radius" type="button" value="修改" onClick="window.location.href='userup.html'">
+			                </td>
+			              </tr>
+			              <tr class="text-c">
+			              	<th><input type="checkbox" id="checkbox-1" class="ids"></th>
+			                <th>2</th>
+			                <td>小明</td>
+			                <td>6</td>
+			                <td>2</td>
+			                <td>2017-9-14</td>
+			                <td>127.0.0.1</td>
+			                <td>登录</td>
+			               <td>
+								<input class="btn btn-warning radius" type="button" value="禁用">
+								<input class="btn btn-danger radius" type="button" value="删除">
+								<input class="btn btn-success radius" type="button" value="修改" onClick="window.location.href='userup.html'">
+			                </td>
+			              </tr>
+			              <tr class="text-c">
+			              	<th><input type="checkbox" id="checkbox-1" class="ids"></th>
+			                <th>3</th>
+			                <td>小花</td>
+			                <td>7</td>
+			                <td>1</td>
+			                <td>2017-9-12</td>
+			                <td>127.0.0.1</td>
+			                <td>登录</td>
+			                <td>
+									<input class="btn btn-warning radius" type="button" value="禁用">
+								<input class="btn btn-danger radius" type="button" value="删除">
+								<input class="btn btn-success radius" type="button" value="修改" onClick="window.location.href='userup.html'">
+			                </td>
+			              </tr>
+			              <tr class="text-c">
+			              	<th><input type="checkbox" id="checkbox-1" class="ids"></th>
+			                <th>4</th>
+			                <td>小猪</td>
+			                <td>3</td>
+			                <td>1</td>
+			                <td>2017-9-11</td>
+			                <td>127.0.0.1</td>
+			                <td>登录</td>
+			               <td>
+								<input class="btn btn-warning radius" type="button" value="禁用">
+								<input class="btn btn-danger radius" type="button" value="删除">
+								<input class="btn btn-success radius" type="button" onClick="window.location.href='userup.html'" value="修改">
+			                </td>
+			              </tr>
+			              <tr class="text-c">
+			              	<th><input type="checkbox" id="checkbox-1" class="ids"></th>
+			                <th>5</th>
+			                <td>小小</td>
+			                <td>2</td>
+			                <td>0</td>
+			                <td>2017-9-14</td>
+			                <td>127.0.0.1</td>
+			                <td>登录</td>
+			                <td>
+								<input class="btn btn-warning radius" type="button" value="禁用">
+								<input class="btn btn-danger radius" type="button" value="删除">
+								<input onClick="window.location.href='userup.html'" class="btn btn-success radius" type="button" value="修改">
+			                </td>
+			            </tbody>
+    				</table>
+				</div>
+					<div style="margin-left:450px; height:35px;">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="上一页">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="1">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="2">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="3">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="4">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="...">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="下一页">
+					</div>
+			</div>	 
+		</div>
+</section>
+
+<!--_footer 作为公共模版分离出去-->
+	{include file="public/footer"}
+
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="__STATIC__/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="__STATIC__/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+/*管理员-角色-添加*/
+function admin_role_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*管理员-角色-编辑*/
+function admin_role_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+/*管理员-角色-删除*/
+function admin_role_del(obj,id){
+	layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		
+		
+		$(obj).parents("tr").remove();
+		layer.msg('已删除!',{icon:1,time:1000});
+	});
+}
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

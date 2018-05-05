@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="__STATIC__/lib/html5shiv.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="__STATIC__/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="__STATIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>广告添加</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+   
+  <div class="wap-container">
+     
+    <nav class="breadcrumb">
+      <div class="container">
+        <i class="Hui-iconfont">&#xe67f;</i>
+        <a href="/" class="c-primary">首页</a>
+        <span class="c-gray en">&gt;</span>
+        <a href="#">广告管理</a>
+        <span class="c-gray en">&gt;</span>
+        <span class="c-gray">广告添加</span>
+      </div>
+    </nav>
+    <div class="container ui-sortable">
+      <h1>广告添加</h1> 
+      <div class="panel panel-default">
+        <div class="panel-header clearfix">
+          <span class="f-l">  </span>
+        </div>
+        <div class="panel-body">
+        <form action="/" method="post" id="form-admin-add" class="form form-horizontal">
+        <table class="table table-border table-bordered table-bg">
+          <tbody>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red"></span> 广告类型：</th>
+            <td><select class="input-text" name="level" id="level">
+                        <option value="请选择">全部类型</option>
+                          <option value="产品广告">产品广告</option>
+                          <option value="品牌广告">品牌广告</option>
+                          <option value="观念广告">观念广告</option>
+                          <option value="公益广告">公益广告</option>
+                        </select></td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 广告标题：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text"  name="title" required="true" placeholder="" id="name" datatype="*2-16" nullmsg="用户名不能为空">
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 简略标题：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" value="" placeholder="" name="description" datatype="*2-16" id="shorttitle" required="true">
+            </td>
+          </tr>
+          
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 广告位置：</th>
+            <td><select class="input-text" name="level" id="level">
+                        <option value="请选择">请选择</option>
+                          <option value="动态">动态</option>
+                          <option value="新闻">新闻</option>
+                        </select></td>
+          </tr>
+          
+     
+          
+         
+         
+         
+      <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 广告品牌：</th>
+            <td>
+              <input type="text" style="width:200px" class="input-text" value="" placeholder="" id="pinpai" required="true" name="description" datatype="*2-16">
+            </td>
+          </tr>
+      <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 广告详情内容：</th>
+            <td>
+              <textarea name="" cols="" id="neirong" required="true" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,10)"></textarea>
+        <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+            </td>
+          </tr>
+      
+      <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 上传图片：</th>
+            <td>
+              <div class="formControls col-xs-8">
+                <span class="btn-upload form-group">
+                <input class="input-text upload-url" type="text" name="uploadfile-2" id="uploadfile-2" readonly style="width:200px">
+                <a href="javascript:void();" class="btn btn-primary upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+                <input type="file" id="file" multiple name="file-2" class="input-file" onchange="preview(this)" >
+                </span>
+                <img src="" style="width:200px; height:200px" id="fileimg" />
+              </div>
+            </div> 
+            </td>
+          </tr>
+
+          <tr>
+            <th></th>
+            <td><div class="row cl">
+                            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+        <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+        <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
+        <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+      </div>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+        </div>
+      </div>
+             
+       
+    </div>
+    <footer class="footer mt-20">
+      <div class="container">
+        <nav class="footer-nav">
+          <a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+          <span class="pipe">|</span>
+          <a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+          <span class="pipe">|</span>
+          <a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+        </nav>
+        <p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+          <a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+          <br>
+          未经允许，禁止转载、抄袭、镜像<br>
+          用心做站，做不一样的站</p>
+      </div>
+    </footer>
+  </div>
+</div>
+ 
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
+
+  $("#form-article-add").validate({
+    rules:{
+       title:{
+        required:true,
+        // minlength:4,
+        // maxlength:16
+      },
+      shorttitle:{
+        required:true,
+      },
+      pinpai:{
+        required:true,
+      },
+      neirong:{
+        required:true,
+      },
+      // title:{
+      //   required:true,
+      //   equalTo: "#password"
+      // },
+      // title:{
+      //   required:true,
+      // },
+      // title:{
+      //   required:true,
+      //   isPhone:true,
+      // },
+      // title:{
+      //   required:true,
+      //   email:true,
+      // },
+      // title:{
+      //   required:true,
+      // },
+    },
+  });
+});
+function preview(file){
+  
+        if (file.files && file.files[0]){  
+            var reader = new FileReader();  
+            reader.onload = function(evt){  
+            // prevDiv.innerHTML = '<img width="100%" height="100%" id="qw_img" src="' + evt.target.result + '" />';
+            $('#fileimg').attr('src' , evt.target.result);
+        }    
+             reader.readAsDataURL(file.files[0]);  
+        }else{  
+            // prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';  
+          $('#fileimg').attr('src' , file.value);
+        }  
+    } 
+</script>
+
+
+<script>
+//弹窗
+function modaldemo(){
+  $("#modal-demo").modal("show");
+}
+//消息框
+function modalalertdemo(){
+  $.Huimodalalert('我是消息框，2秒后我自动滚蛋！',2000);
+}
+$(function(){
+  $(".input-text,.textarea").Huifocusblur();
+  
+  //幻灯片
+  jQuery("#slider-3 .slider").slide({mainCell:".bd ul",titCell:".hd li",trigger:"click",effect:"leftLoop",autoPlay:true,delayTime:700,interTime:3000,pnLoop:false,titOnClassName:"active"});
+  
+  $(".panel").Huifold({
+    titCell:'.panel-header',
+    mainCell:'.panel-body',
+    type:1,
+    trigger:'click',
+    className:"selected",
+    speed:"first",
+  });
+  
+  //邮箱提示  
+  $("#email").emailsuggest();
+  
+  //checkbox 美化
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
+  
+  //日期插件
+  $("#datetimepicker").datetimepicker({
+      format: 'yyyy-mm-dd',
+    minView: "month",
+    todayBtn:  1,
+    autoclose: 1,
+    endDate : new Date()
+  }).on('hide',function(e) {
+    //此处可以触发日期校验。
+  });
+  
+  /*+1 -1效果*/
+  $("#spinner-demo").Huispinner({
+    value:1,
+    minValue:1,
+    maxValue:99,
+    dis:1
+  });
+  
+  $(".textarea").Huitextarealength({
+    minlength:10,
+    maxlength:200.
+  });
+  
+  $("#demoform").validate({
+    rules:{
+      email:{
+        required:true,
+        email:true,
+      },
+      username:{
+        required:true,
+        minlength:4,
+        maxlength:16
+      },
+      telephone:{
+        required:true,
+        isMobile:true,
+      },
+      password:{
+        required:true,
+        isPwd:true,
+      },
+      password2:{
+        required:true,
+        equalTo: "#password"
+      },
+      sex:{
+        required:true,
+      },
+      datetimepicker:{
+        required:true,  
+      },
+      checkbox2:{
+        required:true,
+      },
+      city:{
+        required:true,
+      },
+      website:{
+        required:true,
+        url:true,
+      },
+      beizhu:{
+        maxlength:500,
+      }
+    },
+    onkeyup:false,
+    focusCleanup:true,
+    success:"valid",
+    submitHandler:function(form){
+      $("#modal-shenqing-success").modal("show");
+      $(form).ajaxSubmit();
+    }
+  });
+
+  //选项卡
+  $("#HuiTab-demo1").Huitab({
+    index:0
+  });
+  
+  $("#Huitags-demo1").Huitags();
+  
+  //返回顶部
+  $.Huitotop();
+  
+  //hover效果
+  $('.maskWraper').Huihover();
+  
+  //星级评价
+  $("#star-1").raty({
+    hints: ['1','2', '3', '4', '5'],//自定义分数
+    starOff: 'iconpic-star-S-default.png',//默认灰色星星
+    starOn: 'iconpic-star-S.png',//黄色星星
+    path: 'static/h-ui/images/star',//可以是相对路径
+    number: 5,//星星数量，要和hints数组对应
+    showHalf: true,
+    targetKeep : true,
+    click: function (score, evt) {//点击事件
+      //第一种方式：直接取值
+      $("#result-1").html('你的评分是'+score+'分');
+    }
+  });
+
+  $( ".ui-sortable" ).sortable({
+    //connectWith: ".panel",
+    items:".panel",
+    handle: ".panel-header",
+    //delay: 300, //时间延迟
+    //distance: 15, //距离延迟
+    placeholder: "ui-state-highlight", //占位符样式
+    update: function(event, ui){
+      
+    }
+  }).disableSelection();
+
+  var _bodyHeight = $(window).height();
+  var _doch = $(document).height();
+  $(".containBox").height(_bodyHeight);
+
+  /*左右滑动菜单*/
+    $(".JS-nav-toggle").click(function() {
+    $("body").addClass('sideBox-open');
+        $(".containBox-bg").height(_bodyHeight).show();
+    });
+    $(".containBox-bg").click(function() {
+    $(this).hide();
+    $("body").removeClass('sideBox-open');
+    });
+});
+</script>
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/public/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/public/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/public/lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="/public/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="/public/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>Hi，H-ui v3.1</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+<div class="containBox"> 	 
+	<div class="wap-container">
+		 
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">导航</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">修改</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>导航修改</h1> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<span class="f-l">导航修改</span>
+				</div>
+				<div class="panel-body">
+				<form  class="form form-horizontal" action="{:url('Navigation/do_upnav')}" method="post" id="form-admin-add" >
+		<table class="table table-border table-bordered table-bg">
+        	<tbody>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 导航名字：</th>
+            <td>	            
+				<div class="row cl">
+                <div class="formControls col-xs-8 col-sm-9">
+					<input type="hidden" value="{$list.id}" name="id">
+                    <input class="input-text" value="{$list.name}" placeholder="" id="name" name="name" required="true" invalid="true" type="text" style="width:30%">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 导航描述：</th>
+            <td>
+            	<div class="row cl">
+                <div class="formControls col-xs-8 col-sm-9">
+                  <input class="input-text" value="{$list.description}" placeholder="" id="description" name="description" required="true" invalid="true" type="text">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red"></span> 导航级别：</th>
+            <td>
+				<select class="input-text" name="level" id="level">
+				{foreavh name="list" item="data"}
+				   <option value="{$list.id}">{$list.level}</option>
+				{/foreach}
+				</select>
+			</td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red"></span> 选择上级导航：</th>
+            <td>
+				<select class="input-text" name="top[]" id="top">
+				{foreach item="data" name="list"}
+					<option value="{$list.top}">{$list.top}</option>			   
+				{/foreach}
+				</select>
+			</td>
+          </tr>                 
+		  <tr>
+            <th class="text-r" name="sex">显示在导航栏：</th>
+            <td>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="show" type="radio" id="sex-1" value="0" {if condition="$list.show eq 0"} checked{/if}>
+					<label for="sex-1">显示</label>
+				</div>
+				<div class="radio-box">
+					<input name="show" type="radio" id="sex-2" value="1" {if condition="$list.show eq 1"} checked{/if}>
+					<label for="sex-2">不显示</label>
+				</div>
+		
+			</div>
+			</td>
+          </tr>
+		  
+          <tr>
+            <th></th>
+            <td>
+			<div class="row cl">
+				<div class="col-xs-8 col-xs-offset-3" style="margin-left:20px;margin-bottom:15px;border-radius:5px">
+				   <input class="btn btn-secondary radius" type="submit" value="提交"/>
+				</div>
+			</div>
+			</td>
+          </tr>
+	        </tbody>
+		</table>
+				</form>
+				</div>
+			</div>		 
+		</div>
+		<footer class="footer mt-20">
+			<div class="container">
+				<nav class="footer-nav">
+					<a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+				</nav>
+				<p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+					<a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+					<br>
+					未经允许，禁止转载、抄袭、镜像<br>
+					用心做站，做不一样的站</p>
+			</div>
+		</footer>
+	</div>
+</div>
+ 
+<script type="text/javascript" src="/public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/public/lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/public/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-admin-add").validate({
+		rules:{
+			name:{
+				minlength:2,
+				maxlength:6,
+				required:true,
+			},
+			description:{
+				minlength:10,
+				maxlength:30,
+				required:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script>
+
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

@@ -1,0 +1,193 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>回收站</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+	 
+	<div class="wap-container">
+		 
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">回收站</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>前台用户回收站(5)</h1> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<div class="f-l"> 
+						<a href="#" class="btn btn-danger radius">清空</a>
+						<a href="#" class="btn btn-success radius">还原</a>
+					</div>
+					
+					<div class="f-r">
+						<input type="text" name="" id="" placeholder=" 名称" style="width:250px" class="input-text"><button name="" id="" class="btn btn-success" type="submit"><i class="icon-search"></i> 搜索</button>
+					</div>
+					</div>
+				<div class="panel-body">
+					<table class="table table-border table-bordered table-hover">
+      					 <thead>
+			              <tr>
+							<th><input type="checkbox" id="check_rule_all" class="tpl-table-fz-check"/></th>
+			                <th>ID</th>
+			                <th>用户名</th>
+			                <th>密码</th>
+			                <th>等级</th>
+							<th>注册时间</th>
+			                <th>注销时间</th>
+			                <th>操作</th>
+			              </tr>
+			            </thead>
+			            <tbody>
+			              <tr>
+							<th><input type="checkbox" value="" class="ids"/></th>
+			                <th>1</th>
+			                <td>小明</td>
+			                <td>1111</td>
+			                <td>初级会员</td>
+							<td>2016-05-11</td>							
+			                <td>2017-08-11</td>
+			                <td>
+								<a href="#" class="btn btn-success radius">还原</a>
+								<a href="#" class="btn btn-danger radius">彻底删除</a>
+							</td>
+			              </tr>
+			              <tr>
+							<th><input type="checkbox" value="" class="ids"/></th>
+			                <th>2</th>
+			                <td>小红</td>
+			                <td>1111</td>
+			                <td>中级会员</td> 
+							<td>2016-05-11</td>	
+			                <td>2017-02-15</td>
+			                <td>
+								<a href="#" class="btn btn-success radius">还原</a>
+								<a href="#" class="btn btn-danger radius">彻底删除</a>
+							</td>
+			              </tr>
+			             <tr>
+							<th><input type="checkbox" value="" class="ids"/></th>
+			                <th>3</th>
+			                <td>小刚</td>
+			                <td>1111</td>
+			                <td>高级会员</td> 
+							<td>2016-05-11</td>								
+			                <td>2017-09-17</td>
+			                <td>
+								<a href="#" class="btn btn-success radius"/>还原</a>
+								<a href="#" class="btn btn-danger radius">彻底删除</a>
+							</td>
+			              </tr>
+			             <tr>
+							<th><input type="checkbox" value="" class="ids"/></th>
+			                <th>4</th>
+			                <td>小亮</td>
+			                <td>1111</td>
+			                <td>特级会员</td>  
+							<td>2016-05-11</td>	
+			                <td>2017-09-15</td>
+			                <td>
+								<a href="#" class="btn btn-success radius"/>还原</a>
+								<a href="#" class="btn btn-danger radius">彻底删除</a>
+							</td>
+			              </tr>
+			              <tr>
+							<th><input type="checkbox" value="" class="ids"/></th>
+			                <th>5</th>
+			                <td>小花</td>
+			                <td>1111</td>
+			                <td>初级会员</td>  
+							<td>2016-05-11</td>	
+			                <td>2017-09-14</td>
+			                <td>
+								<a href="#" class="btn btn-success radius">还原</a>
+								<a href="#" class="btn btn-danger radius">彻底删除</a>
+							</td>
+			              </tr>
+						  
+			            </tbody>
+    				</table>
+					
+				</div>
+				<div style="margin-left:450px; height:35px;">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="上一页">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="1">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="2">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="3">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="4">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="...">
+						<input class="btn btn-secondary-outline radius size-M" type="button" value="下一页">
+				</div>
+			</div>		 
+		</div>
+		<footer class="footer mt-20">
+			<div class="container">
+				<nav class="footer-nav">
+					<a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+				</nav>
+				<p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+					<a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+					<br>
+					未经允许，禁止转载、抄袭、镜像<br>
+					用心做站，做不一样的站</p>
+			</div>
+		</footer>
+	</div>
+</div>
+ 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/layui.js"></script>
+<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+        $('#check_rule_all').click(function(){
+            if($(this).is(':checked')){
+                $('.ids').prop('checked',true);
+            }else{
+                $('.ids').prop('checked',false);
+            }
+        });
+    </script>
+
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

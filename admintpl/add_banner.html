@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/public/lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>Hi，H-ui v3.1</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+   
+  <div class="wap-container">
+     
+    <nav class="breadcrumb">
+      <div class="container">
+        <i class="Hui-iconfont">&#xe67f;</i>
+        <a href="/" class="c-primary">首页</a>
+        <span class="c-gray en">&gt;</span>
+        <a href="#">Banner</a>
+        <span class="c-gray en">&gt;</span>
+        <span class="c-gray">添加</span>
+      </div>
+    </nav>
+    <div class="container ui-sortable">
+      <h1>Banner添加</h1> 
+      <div class="panel panel-default">
+        <div class="panel-header clearfix">
+          <span class="f-l">Banner添加</span>
+        </div>
+        <div class="panel-body">
+          <form class="form form-horizontal" enctype="multipart/form-data" method="post" id="form-admin-add"  name="a" novalidate="novalidate" action="">
+          <!-- {:url('System/do_add_banner')} -->
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片标题：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text" value="" placeholder="图片标题" id="title" name="title" type="text">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>简略标题：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text" value="" placeholder="简略标题" id="shorttitle" name="shorttitle" type="text">
+		</div>
+	</div>
+
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>分类栏目：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+			<div class="radio-box">
+				  <select class="input-text" name="type" id="type">
+                          <option value="全部栏目">全部栏目</option>
+                          <option value="新闻资讯">新闻资讯</option>
+                          <option value="├行业动态">├行业动态</option>
+                          <option value="├行业资讯">├行业资讯</option>
+          </select>
+			</div>
+		</div>
+	</div>
+
+  	<!--<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>状态：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+			<div class="radio-box">
+				<input name="static" type="radio" id="sex-1" checked>
+				<label for="sex-1">开启</label>
+			</div>
+			<div class="radio-box">
+				<input type="radio" id="sex-2" name="static">
+				<label for="sex-2">关闭</label>
+			</div>
+		</div>
+	</div>-->
+
+  <div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>上传图片：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+		<span class="btn-upload form-group">
+		  <input class="input-text upload-url radius" type="text" name="photo" id="photo" readonly>
+			<a href="javascript:void();" class="btn btn-primary radius">
+			<i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+		  <input type="file" multiple name="photo" class="input-file" onchange="preview(this)">
+		</span>
+
+    <img src="" style="width:200px; height:200px" id="fileimg" />
+		</div>
+
+	</div>
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<input class="btn btn-primary radius" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" type="submit">
+		</div>
+	</div>
+	</form>
+        </div>
+      </div>
+             
+       
+    </div>
+    <footer class="footer mt-20">
+      <div class="container">
+        <nav class="footer-nav">
+          <a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+          <span class="pipe">|</span>
+          <a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+          <span class="pipe">|</span>
+          <a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+        </nav>
+        <p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+          <a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+          <br>
+          未经允许，禁止转载、抄袭、镜像<br>
+          用心做站，做不一样的站</p>
+      </div>
+    </footer>
+  </div>
+</div>
+ 
+<script type="text/javascript" src="/public/lib/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="/public/lib/jquery-ui/1.9.1/jquery-ui.js"></script>
+<script type="text/javascript" src="/public/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/public/lib/layer/2.4/layer.js">
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
+  
+  $("#form-admin-add").validate({
+    rules:{
+      title:{
+        required:true,
+      },
+      type:{
+        required:true,
+      },
+      shorttitle:{
+        required:true,
+      },
+      autor:{
+        required:true,
+      },
+      photo:{
+        required:true,
+      },
+    },
+    onkeyup:false,
+    focusCleanup:true,
+    success:"valid",
+    submitHandler:function(form){
+      // $(form).ajaxSubmit();
+      // var index = parent.layer.getFrameIndex(window.name);
+      // parent.$('.btn-refresh').click();
+      // parent.layer.close(index);
+      var formData = new FormData(document.getElementById("form-admin-add"));  
+      $.ajax({
+        url: 'http://www.dz.com/admin.php/system/do_add_banner',
+        type: 'POST',
+        // data: $('#form-admin-add').serialize(),
+        data:formData,
+        contentType: false,
+        processData: false,
+        success: function(msg){
+          if(msg){
+          layer.msg('成功',{time:700},function(){
+          $(":checkbox").attr("checked",false);
+          window.location.href = "http://www.dz.com/admin.php/listbanner";
+          // history.back(-1);
+          });
+            
+            }else{
+              
+            layer.msg('失败',{time:700},function(){
+            $(":checkbox").attr("checked",false);
+            window.location.reload();
+          });
+            }
+        },
+        error:function(msg) {
+            layer.msg('连接服务器失败',{time:4000},function(){
+                      window.location.reload();
+            });
+        },
+        });
+    }
+  });
+});
+</script>
+<script>
+function preview(file){
+  
+        if (file.files && file.files[0]){  
+            var reader = new FileReader();  
+            reader.onload = function(evt){  
+            //prevDiv.innerHTML = '<img width="100%" height="100%" id="qw_img" src="' + evt.target.result + '" />';
+            $('#fileimg').attr('src' , evt.target.result);
+        }    
+             reader.readAsDataURL(file.files[0]);  
+        }else{  
+            // prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';  
+          $('#fileimg').attr('src' , file.value);
+        }  
+    }
+
+</script>
+
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

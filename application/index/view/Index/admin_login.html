@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8" />
+<title>大智DZcms后台登录</title><base target="_blank" />
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+</head>
+<body>
+<img id="img" src="./584dffd51d48b.jpg"  />
+<div class="title">
+<h4>大智科技有限公司 </h4>
+<h5>专业热线:0539-123456</h5>
+</div>
+<div id="login_id">
+    <h1>DZCMS 内容管理系统</h1>
+    <div class="textArea" >
+			<form id="loginform" name="loginform" method="post" action="#"  id="admin-login">
+				<div class="textLabelWrap">
+					<label>用户名</label>
+					<input  type="text" name="loginName" id="loginName">
+				</div>
+				<div class="textLabelWrap">
+					<label>密&nbsp&nbsp&nbsp码</label>
+					<input type="password" name="password" id="password">
+				</div>
+				
+				<input onclick="window.location='admin.html';" type="button" value="登 录" id="loginBtn" >
+			</form>
+		</div>
+</div>
+</body>
+<style type="text/css">
+h1{color:#cacaca;font-weight: bold;text-align: center;padding-top:100px;}
+.title{float:right;}
+h4{margin-right:25px;font-weight: bold;color:#fff;}
+h5{color:#fff;font-weight: bold;margin-right:20px;}
+body { text-align: center;}
+#img{width: 100%;height: 700px;position: absolute;top: 0;left: 0;z-index: -1;}
+.textArea{width: 100%;text-align: center;padding-top:10px;}
+.textLabelWrap{width:310px;height:40px;line-height:40px;text-align:center;margin:auto;padding-top: 30px;}
+.textLabelWrap label{display:block;float:left;text-align:right;font-size:16px;height:40px;width:50px;margin-right:16px;color:#cacaca;font-weight: bold}
+.textLabelWrap input[type="text"],.textLabelWrap input[type="password"]{margin:auto;width:240px;height:35px;border:solid 1px #cacaca;display:block;font-size:16px;}
+#validateCode{width: 138px;margin-bottom: 60px;display: block;float: left;border:solid 1px #cacaca;font-size:16px;}
+#loginBtn{width: 100px;height: 40px;text-align:center;background-color: #ffb15e;color: #fff;border: none;font-size:14px;cursor:pointer;margin-top: 30px;}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#admin-login").validate({
+		rules:{
+			loginName:{
+				required:true,
+				minlength:4,
+				maxlength:16
+			},
+			password:{
+				required:true,
+			},
+		},
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script>
+</html>

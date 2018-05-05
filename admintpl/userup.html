@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/public/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/public/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/public/lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="/public/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src=/public/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>用户修改</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+<div class="containBox">
+	<div class="wap-container">
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">用户管理</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">用户修改</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h2>用户修改</h2>
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<span class="f-l">用户修改</span>
+				</div>
+				<div class="panel-body">
+			<form class="form form-horizontal" action="" method="post" id="form-admin-add" enctype="multipart/form-data">
+				<input type="hidden" name="id" value="{$user.id}" >
+      	<table class="table table-border table-bordered table-bg">
+        	<tbody>
+          <tr>
+            <th width="100" class="text-r">用户名：</th>
+            <td class="formControls col-xs-8 col-sm-9">
+				<input type="text" value="{$user.nickname}" class="input-text" placeholder="4~16个字符，字母/中文/数字/下划线" name="nickname" id="username"></td>
+          </tr>
+		  <tr>
+			  <th class="text-r">头像：</th>
+			  <td>
+              <span style="height:60px;" class="btn-upload form-group">
+                <!--<input class="input-text upload-url radius" type="text" name="headportrait-1" id="uploadfile-1" value="{$user.headportrait}" readonly>-->
+				<input type="file" multiple name="headportrait" id="doc-form-file" class="input-file">
+				<img style="width:50px;height:50px;" src="/public/uploads/{$user.headportrait}" alt="111" id="preview" class="radius" />
+				  &nbsp;&nbsp;
+				<a href="javascript:void();" class="btn btn-primary radius"> 浏览图片</a>
+              </span>
+			  </td>
+		  </tr>
+		  <tr>
+			  <th class="text-r">
+				  <span class="c-red"></span> 性别：</th>
+			  <td >
+				  <label>
+				  <input name="sex" type="radio" id="six_1" {if condition="$user.sex eq 1"} checked {/if}>
+				  男</label>
+				  &nbsp;
+				  <label>
+					<input type="radio" name="sex" {if condition="$user.sex eq 0"} checked {/if}>女</label></td>
+		  </tr>
+		  <tr>
+            <th class="text-r">邮箱：</th>
+            <td class="formControls col-xs-8 col-sm-9">
+				<input type="text" value="{$user.email}" class="input-text" placeholder="@" name="email" id="email" autocomplete="off"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red"></span> 手机：</th>
+            <td class="formControls col-xs-8 col-sm-9">
+			    <input type="text" value="{$user.phone}" class="input-text" autocomplete="off" placeholder="手机" name="phone" id="telephone">
+			</td>
+          </tr>
+            <th></th>
+            <td><input id="button" class="btn btn-primary" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/public/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/public/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/public/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#form-admin-add").validate({
+			rules:{
+				nickname:{
+					required:true,
+					minlength:2,
+					maxlength:4
+				},
+				password:{
+					required:true,
+				},
+				sex:{
+					required:true,
+				},
+				email:{
+					required:true,
+					email:true,
+				},
+				adminRole:{
+					required:true,
+				},
+			},
+		});
+	});
+</script>
+<script type="text/javascript">
+$(function() {
+	$("#doc-form-file").change(function() {
+		var $file = $(this);
+		var fileObj = $file[0];
+		var windowURL = window.URL || window.webkitURL;
+		var dataURL;
+		var $img = $("#preview");
+
+		if(fileObj && fileObj.files && fileObj.files[0]){
+			dataURL = windowURL.createObjectURL(fileObj.files[0]);
+			$img.attr('src',dataURL);
+		}else{
+			dataURL = $file.val();
+			var imgObj = document.getElementById("preview");
+// 两个坑:
+// 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+// 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+			imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+		}
+	});
+});
+</script>
+</body>
+</html>

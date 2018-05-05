@@ -1,0 +1,234 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>栏目添加页面</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+	 
+	<div class="wap-container">
+		 
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">栏目管理</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">栏目添加</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>栏目添加</h1>
+			<div class="panel panel-default">
+				<!-- <div class="panel-header clearfix">
+					<span class="f-l">左侧标题</span>
+					<span class="f-r">右侧标题</span>
+				</div> -->
+				<div class="panel-body">
+					<form action="" method="post" id="addcolumn">
+					<table class="table table-border table-bordered ">
+      					 <tbody>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 添加方式：</th>
+            <td style="">
+				<div class="formControls col-xs-3">
+					<div class="mt-20 skin-minimal">
+						<div class="radio-box">
+							<input type="radio" id="radio-1" name="demo-radio1" checked>
+							<label for="radio-1">单条添加</label>
+						</div>
+						<div class="radio-box">
+							<input type="radio" id="radio-2" name="demo-radio1">
+							<label for="radio-2">批量添加</label>
+						</div>
+					</div>
+				</div>
+			</td>
+          </tr>
+		<tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 请选择模型：</th>
+            <td>
+				<div class="formControls col-xs-3 col-sm-4" style="width: 250px">
+				<span class="select-box" style="width:160px">
+  			<select class="select" size="1" name="model" style="border:0px solid red;width:150px">
+    			<option value="" selected>请选择模型</option>
+    			<option value="1">模型一</option>
+    			<option value="2">模型二</option>
+    			<option value="3">模型三</option>
+  			</select>
+			</span>
+  			</select>
+				</div>
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span>上级栏目：</th>
+            <td>
+				<div class="formControls col-xs-3 col-sm-4">
+				<span class="select-box" style="width:160px">
+  			<select class="select" size="1" name="supertemp" style="border:0px solid red;width:150px">
+    			<option value="" selected>作为一级栏目</option>
+    			<option value="1">模型一</option>
+    			<option value="2">模型二</option>
+    			<option value="3">模型三</option>
+  			</select>
+			</span>
+  			</select>
+				</div>
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 栏目名：</th>
+            <td>
+				<div class="formControls col-sm-4" style="width: 220px">
+				<input type="text" style="width:200px" class="input-text" value="" placeholder="" id="source" name="name">
+				</div>
+			</td>
+          </tr>
+          
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 英文栏目名：</th>
+            <td>
+				<div class="formControls col-xs-3 col-sm-5" style="width: 320px">
+				<input type="text" style="width:300px" class="input-text" value="" placeholder="" id="engname" name="engname">
+				</div>
+			</td>
+          </tr>
+          
+          <tr>
+            <th class="text-r">内容图片：</th>
+            <td>
+				<span class="btn-upload form-group" style="margin-left: 15px;">
+  <input class="input-text upload-url radius" type="text" name="uploadfile-1" id="uploadfile-1" readonly><a class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+  <input type="file" multiple name="file-1" class="input-file">
+</span>
+			</td>
+          </tr>
+          <tr>
+            <th class="text-r">描述：</th>
+            <td>
+				<div class="formControls col-xs-3 col-sm-4">
+				<textarea class="input-text" name="user-info" id="user-info" style="height:150px;width:400px;"></textarea>
+				</div>
+			</td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r">工作流：</th>
+            <td>
+				<div class="formControls col-xs-3 col-sm-4">
+				<span class="select-box" style="width:160px">
+  			<select class="select" size="1" name="demo1"style="border:0px solid red;width:150px">
+    			<option value="" selected>不需要审核</option>
+    			<option value="1">需要审核</option>
+  			</select>
+			</span>
+				</div>
+  			</select>
+            </td>
+          </tr>
+           <tr>
+            <th width="100" class="text-r"> 是否在导航显示：</th>
+            <td>
+				<div class="formControls col-xs-3 col-sm-4">
+					<div class="mt-20 skin-minimal">
+						<div class="radio-box">
+							<input type="radio" id="radio-3" name="demo-radio2" checked>
+							<label for="radio-3">是</label>
+						</div>
+						<div class="radio-box">
+							<input type="radio" id="radio-4" name="demo-radio2">
+							<label for="radio-4">否</label>
+						</div>
+					</div>
+				</div>
+			</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><button class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 提交</button></td>
+          </tr>
+        </tbody>
+    				</table>
+					</form>
+				</div>
+			</div>
+			       
+			 
+		</div>
+		<footer class="footer mt-20">
+			<div class="container">
+				<nav class="footer-nav">
+					<a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+				</nav>
+				<p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+					<a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+					<br>
+					未经允许，禁止转载、抄袭、镜像<br>
+					用心做站，做不一样的站</p>
+			</div>
+		</footer>
+	</div>
+</div>
+ 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        })
+        $("#addcolumn").validate({
+            rules:{
+                model:{
+                    required:true,
+                },
+                name:{
+                    required:true,
+                },
+                engname:{
+                    required:true,
+                },
+
+            },
+        });
+    })
+</script>
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

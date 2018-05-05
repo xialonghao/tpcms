@@ -1,0 +1,293 @@
+	<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/public/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/public/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/public/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="/public/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>添加管理员 - 管理员管理 - H-ui.admin v3.1</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+<article class="page-container">
+	<form class="form form-horizontal" id="form-admin-add" method="post" enctype="multipart/form-data" >
+		<input type="hidden" id="userid" name="userid" value="{$ainfo.id}"/>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$ainfo.username}" placeholder="" id="adminName" name="adminName">
+			<p style="margin-top: 5px;margin-left: 10px;font-size: 13px" id="nameext"></p>
+		</div>
+
+	</div>
+
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" autocomplete="off" id="password" name="password" placeholder="不修改请留空">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+			<div class="radio-box">
+				<input name="sex" type="radio" id="sex-1" value="1"
+					   {if condition="$ainfo.sex eq 1"} checked {/if}
+				>
+				<label for="sex-1">
+				男
+				</label>
+			</div>
+			<div class="radio-box">
+				<input type="radio" id="sex-2" name="sex" value="0"
+					   {if condition="$ainfo.sex eq 0"} checked {/if}
+				>
+				<label for="sex-2">女</label>
+			</div>
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$ainfo.telphone}" placeholder="" id="phone" name="phone">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" value="{$ainfo.email}" placeholder="@" name="email" id="email">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">角色：</label>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="adminRole" size="1">
+
+				{foreach name="groupname" item="name"}
+				<option value="{$name.Id}"
+						{if condition="$ainfo.group eq $name.Id"} selected {/if}
+				>
+				{$name.title}
+				</option>
+
+				{/foreach}
+			</select>
+			</span> </div>
+	</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>头像：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<span class="btn-upload form-group">
+					<a  class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+  <input type="file" id="file" name="upload_photo" class="input-file" onchange="preview(this)">
+</span>
+				<div style="clear:both;padding: 10px;" id="fileimg">
+					{if condition="$ainfo.photo neq ''"}
+						<img src="{$ainfo.photo}" width="300" height="200"/>
+					{/if}
+				</div>
+
+			</div>
+
+		</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">备注：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<textarea name="remark" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="Huitextarealength(this)">{$ainfo.remark}</textarea>
+			<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+		</div>
+	</div>
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<input class="btn btn-primary radius" id="sub" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+		</div>
+	</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去--> 
+<script type="text/javascript" src="/public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/public/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/public/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="/public/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/public/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript">
+
+    var length=$('.textarea').val().length;	//显示备注长度字符
+    $('.textarea-length').html(length);
+
+	function Huitextarealength(obj) {
+	var length=$(obj).val().length;
+	$('.textarea-length').html(length);
+		if(length>100){
+			$('.textarea-numberbar').css('color','red');
+		}else{
+			$('.textarea-numberbar').css('color','#000');
+		}
+    }
+    function preview(file){
+        var allowtype=['jpg','jpeg','png'];
+        var typeflag=false;
+        var index = file.value.lastIndexOf(".");
+        var ext = file.value.substr(index+1);
+        for(var i = 0;i<allowtype.length;i++){
+            if(ext==allowtype[i]){
+                typeflag=true;
+            }
+        }
+        if(typeflag==false){
+            alert('请上传合法的文件');
+            $('#fileimg').html("");
+            var file = $("#file");
+            file.after(file.clone().val(""));
+            file.remove();
+            return;
+        }
+        if (file.files && file.files[0]){
+            var reader = new FileReader();
+            var img=new Image();
+            reader.onload = function(evt){
+                img.src=evt.target.result;
+                img.onload=function () {	//图片加载完成后创建图片节点
+                    if(img.width<400||img.height<400){
+                        $('#fileimg').html("<img src='"+evt.target.result+"' width='"+img.width+"' height='"+img.height+"'>");
+                    }else{
+                        $('#fileimg').html("<img src='"+evt.target.result+"' width='"+img.width/3.5+"' height='"+img.height/3.5+"'>");
+                    }
+                }
+            }
+            reader.readAsDataURL(file.files[0]);
+        }else{
+            $('#fileimg').attr('src' , file.value);
+        }
+    }
+
+$(function(){
+
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-admin-add").validate({
+        rules:{
+			adminName:{
+				required:true,
+				minlength:2,
+                maxlength:16,
+
+				//异步验证开始
+
+                remote:{
+                    url: "adverify",
+                    type: "post",
+                    dataType: "json",
+					data:{id:$('#userid').val()},
+                    dataFilter:function(data) {
+                        if(data=="true"){
+                            $('#nameext').html('用户名已存在');
+                            $('#nameext').css('color','red');
+                            return false;
+                        }else{
+                            $('#nameext').html('用户名可用');
+                            $('#nameext').css('color','green');
+                            return true;
+                        }
+                    },
+				}
+				//异步验证结束
+
+			},
+			phone:{
+				required:true,
+                isMobile:true,
+			},
+			email:{
+				required:true,
+				email:true,
+			},
+            remark:{
+                maxlength:100,
+			}
+		},
+        errorPlacement: function(error, element) {
+            if (element.attr("name") == "remark" )  {
+
+                error.appendTo($('.remark').html ());
+            }
+            else
+                error.insertAfter(element);
+        }
+	});
+	$('#sub').click(function () {
+	    $(this).attr('disabled',true);
+        var flag = $("#form-admin-add").valid();   		//是否通过表单验证
+        var form = new FormData(document.getElementById("form-admin-add"));	//获取form
+		var pass=$('#password').val().indexOf(' ')>=0;
+		 if(!flag || pass){
+		     if(pass){
+                 layer.msg('密码不能包含空格 确定后在输入', {icon: 2});
+			 }
+            $(this).attr('disabled',false);		//不通过验证按钮重新启用
+		    return;
+		}
+		$.ajax({
+			type:'POST',
+			url:'do_aduserupdate',
+			dataType:'JSON',
+            data:form,
+            processData:false,
+            contentType:false,
+			success:function (data) {
+				if(data == 'succ'){
+                    layer.msg('修改信息成功', {icon: 6},function () {
+                        parent.location.reload();		//刷新父页面
+                    });
+				}
+				if(data == 'fail'){
+                    layer.msg('修改失败 请稍后重试', {icon: 5});
+                    $('#sub').attr('disabled',false);	//提交不通按钮重新启用
+				}
+                if(data == 'notupdate'){
+                    layer.msg('你没有进行任何修改', {icon: 6},function () {
+                        parent.location.reload();		//刷新父页面
+                    });
+
+                }
+            },
+			error:function (error) {
+                layer.msg('未知错误 请稍后重试', {icon: 5});
+                $('#sub').attr('disabled',false);	//发生错误按钮重新启用
+            },
+		})
+    })
+});
+
+
+</script>
+
+
+
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

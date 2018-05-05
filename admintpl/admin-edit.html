@@ -1,0 +1,185 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>管理员修改</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+<div class="containBox"> 
+	<div class="wap-container">
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">管理员管理</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">管理员修改</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>管理员修改</h1> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<span class="f-l">管理员修改</span>
+					<!-- <span class="f-r">右侧标题</span> -->
+				</div>
+				<div class="panel-body">
+					<form class="form form-horizontal" id="form-admin-add" novalidate="novalidate">
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text" value="" placeholder="" id="adminName" name="adminName" required="true" invalid="true" type="text">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>当前密码：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text"  autocomplete="off" value="" placeholder="密码" aria-required="true" id="password" name="password" type="password">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text"  autocomplete="off" placeholder="确认新密码" id="password2" name="password2" type="password">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+		<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+			<div class="radio-box">
+				<input name="sex" type="radio" id="sex-1" checked>
+				<label for="sex-1">男</label>
+			</div>
+			<div class="radio-box">
+				<input type="radio" id="sex-2" name="sex">
+				<label for="sex-2">女</label>
+			</div>
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text" value="" placeholder="" id="phone" name="phone" type="text">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<input class="input-text" placeholder="@" name="email" id="email" type="text">
+		</div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">角色：</label>
+		<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+			<select class="select" name="adminRole" size="1">
+				<option value="0">超级管理员</option>
+				<option value="1">总编</option>
+				<option value="2">栏目主辑</option>
+				<option value="3">栏目编辑</option>
+			</select>
+			</span> </div>
+	</div>
+	<div class="row cl">
+		<label class="form-label col-xs-4 col-sm-3">备注：</label>
+		<div class="formControls col-xs-8 col-sm-9">
+			<textarea name="" cols="" rows="" class="textarea" placeholder="说点什么...100个字符以内" dragonfly="true" onkeyup="$.Huitextarealength(this,100)"></textarea>
+			<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+		</div>
+	</div>
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+			<input class="btn btn-primary radius" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" type="submit">
+		</div>
+	</div>
+	</form>
+				</div>
+			</div>
+			       
+			 
+		</div>
+		<footer class="footer mt-20">
+			<div class="container">
+				<nav class="footer-nav">
+					<a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+				</nav>
+				<p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+					<a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+					<br>
+					未经允许，禁止转载、抄袭、镜像<br>
+					用心做站，做不一样的站</p>
+			</div>
+		</footer>
+	</div>
+</div>
+ 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-admin-add").validate({
+		rules:{
+			adminName:{
+				required:true,
+				minlength:4,
+				maxlength:16
+			},
+			password:{
+				required:true,
+			},
+			password2:{
+				required:true,
+				equalTo: "#password"
+			},
+			sex:{
+				required:true,
+			},
+			email:{
+				required:true,
+				email:true,
+			},
+			adminRole:{
+				required:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script>
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

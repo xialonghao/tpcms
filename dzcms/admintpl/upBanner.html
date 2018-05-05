@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>Hi，H-ui v3.1</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+   
+  <div class="wap-container">
+     
+    <nav class="breadcrumb">
+      <div class="container">
+        <i class="Hui-iconfont">&#xe67f;</i>
+        <a href="/" class="c-primary">首页</a>
+        <span class="c-gray en">&gt;</span>
+        <a href="#">Banner</a>
+        <span class="c-gray en">&gt;</span>
+        <span class="c-gray">修改</span>
+      </div>
+    </nav>
+    <div class="container ui-sortable">
+      <h1>Banner修改</h1> 
+      <div class="panel panel-default">
+        <div class="panel-header clearfix">
+          <span class="f-l">Banner修改</span>
+        </div>
+        <div class="panel-body">
+       
+        <form  class="form form-horizontal" action="{:url('Index/do_upBanner')}" method="post" id="form-admin-add" >
+        <input type="hidden" value="{$list.id}" name="id">
+        <table class="table table-border table-bordered table-bg">
+          <tbody>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 图片标题：</th>
+            <td>              
+        <div class="row cl">
+                <div class="formControls col-xs-8 col-sm-9">
+                  <input class="input-text" value="{$list.ptitle}" placeholder="" id="ptitle" name="ptitle" required="true" invalid="true" type="text" style="width:30%">
+                </div>
+              </div>
+
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 简略标题：</th>
+            <td>
+              <div class="row cl">
+                <div class="formControls col-xs-8 col-sm-9">
+                  <input class="input-text" value="{$list.jtitle}" placeholder="" id="jtitle" name="jtitle" required="true" invalid="true" type="text">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red"></span> 分类栏目：</th>
+            <td><select class="input-text" name="level" id="level">
+                        <option value="全部栏目">全部栏目</option>
+                          <option value="新闻资讯">新闻资讯</option>
+                          <option value="├行业动态">├行业动态</option>
+                          <option value="├行业资讯">├行业资讯</option>
+                        </select></td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 上传作者：</th>
+            <td>
+              <div class="row cl">
+                <div class="formControls col-xs-8 col-sm-9">
+                  <input class="input-text" value="{$list.autor}" placeholder="" id="autor" name="autor" required="true" invalid="true" type="text">
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 图片来源：</th>
+            <td>
+              <div class="row cl">
+                <div class="formControls col-xs-8 col-sm-9">
+                  <input class="input-text" value="{$list.source}" placeholder="" id="source" name="source" required="true" invalid="true" type="text">
+                </div>
+              </div>
+            </td>
+          </tr> 
+           <th width="100" class="text-r"><span class="c-red">*</span> 上传图片：</th>
+            <td>
+              <div class="formControls col-xs-8">
+                <span class="btn-upload form-group">
+                <input class="input-text upload-url" type="text" name="uploadfile-2" id="uploadfile-2" readonly style="width:200px">
+                <a href="javascript:void();" class="btn btn-primary upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+                <input type="file" id="file" multiple name="file-2" class="input-file" onchange="preview(this)" >
+                </span>
+                <img src="" style="width:200px; height:200px" id="fileimg" />
+              </div>
+            </div> 
+            </td>
+          </tr>
+   
+          <tr>
+            <th></th>
+            <td> <div class="row cl">
+      <div class="col-xs-8 col-xs-offset-3" style="margin-left:5px;margin-bottom:15px;border-radius:5px">
+        <input onClick="article_save_submit();" class="btn btn-primary radius" type="submit" value="保存并提交审核">
+        <input onClick="article_save();" class="btn btn-secondary radius" type="button" value="保存草稿">
+        <input onClick="layer_close();" class="btn btn-default radius" type="button" value="取消">
+      </div>
+    </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+        </div>
+      </div>
+             
+       
+    </div>
+    <footer class="footer mt-20">
+      <div class="container">
+        <nav class="footer-nav">
+          <a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+          <span class="pipe">|</span>
+          <a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+          <span class="pipe">|</span>
+          <a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+        </nav>
+        <p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+          <a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+          <br>
+          未经允许，禁止转载、抄袭、镜像<br>
+          用心做站，做不一样的站</p>
+      </div>
+    </footer>
+  </div>
+</div>
+ 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
+  
+  $("#form-admin-add").validate({
+    ptitle:{
+      name:{
+        minlength:2,
+        maxlength:10,
+        required:true,
+      },
+      jtitle:{
+        minlength:2,
+        maxlength:6,
+        required:true,
+      },
+      autor:{
+        minlength:2,
+        maxlength:10,
+        required:true,
+      },
+      source:{
+        minlength:2,
+        maxlength:10,
+        required:true,
+      },
+    },
+    onkeyup:false,
+    focusCleanup:true,
+    success:"valid",
+    submitHandler:function(form){
+      $(form).ajaxSubmit();
+      var index = parent.layer.getFrameIndex(window.name);
+      parent.$('.btn-refresh').click();
+      parent.layer.close(index);
+    }
+  });
+});
+function preview(file){
+  
+        if (file.files && file.files[0]){  
+            var reader = new FileReader();  
+            reader.onload = function(evt){  
+            // prevDiv.innerHTML = '<img width="100%" height="100%" id="qw_img" src="' + evt.target.result + '" />';
+            $('#fileimg').attr('src' , evt.target.result);
+        }    
+             reader.readAsDataURL(file.files[0]);  
+        }else{  
+            // prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';  
+          $('#fileimg').attr('src' , file.value);
+        }  
+    }
+</script>
+
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

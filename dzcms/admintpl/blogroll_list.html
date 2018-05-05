@@ -1,0 +1,326 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>Hi，H-ui v3.1</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+ <script language="JavaScript" type="text/javascript">
+      function changeState(isChecked)
+     {
+       var chk_list=document.getElementsByTagName("input");
+       for(var i=0;i<chk_list.length;i++)
+        {
+         if(chk_list[i].type=="checkbox")
+          {
+           chk_list[i].checked=isChecked;
+          }
+        }
+    }
+   </script>
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+	 
+	<div class="wap-container">
+		 
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">友情链接</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">列表页</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>友情链接</h1> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<a href="blogroll_add.html"><span class="f-l">
+					<input class="btn btn-success radius size-S" type="button" value="添加友情链接"></span></a>
+					<a href="you.html"><span class="f-l"  style="padding-left:20px"><input class="btn btn-danger radius size-S" type="button" value="批量删除"></span></a>
+					<span class="f-r">共有数据：52</span>
+
+				</div>
+				<div class="panel-body">
+					<table class="table table-border table-bordered table-hover">
+      					 <thead>
+			              <tr>
+			              <th>
+			              <input type="checkbox" name="cb" onclick="changeState(this.checked)">
+							<th>链接Id</th>
+			                <th>网站名称</th>
+			                 
+			                <th>图片Logo</th>
+			                <th>所属分类</th>
+			                
+			                <th>状态</th>
+			                <th>管理操作</th>
+			           
+			              </tr>
+			            </thead>
+			            <tbody>
+			              <tr>
+
+			              <th><input type="checkbox" id="checkbox-1"></th>
+			               <th>1</th>
+			                <th>易申网</th>
+			                <td><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3194190233,1159762931&fm=15&gp=0.jpg"></td>
+			                <td>企业网站</td>
+			               
+			                <td>通过</td>
+			                <td>
+				                 <input onclick="window.location='blogroll_update.html';" class="btn btn-success radius size-S" type="button" value="修改">&nbsp
+				                <input class="btn btn-danger radius size-S" type="button" value="删除">
+
+			                </td>
+			               
+			              </tr>
+			              <tr>
+			              <th><input type="checkbox" id="checkbox-1"></th>
+			              <th>2</th>
+			                <th>易申网</th>
+			                <td><a href>www.cacos.com</a></td>
+			                <td>企业网站</td>
+			                
+			                <td>通过</td>
+			                 <td>
+			                 <input onclick="window.location='blogroll_update.html';" class="btn btn-success radius size-S" type="button" value="修改">&nbsp
+			                 <a href="rubbish-bin.html">
+			                 <input class="btn btn-danger radius size-S" type="button" value="删除"></a></td>
+			                
+			              </tr>
+			              <tr>
+			              <th><input type="checkbox" id="checkbox-1"></th>
+			              	<th>3</th>
+			                <th>易申网</th>
+			                <td><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3194190233,1159762931&fm=15&gp=0.jpg"></td>
+			                <td>企业网站</td>
+			               
+			                <td>通过</td>
+			                <td>
+			                <a href="#">
+			                <input onclick="window.location='blogroll_update.html';" class="btn btn-success radius size-S" type="button" value="修改">&nbsp
+			                <a href="rubbish-bin.html">
+			                <input class="btn btn-danger radius size-S" type="button" value="删除"></a></td>
+			                
+			              </tr>
+			              <tr>
+			              <th><input type="checkbox" id="checkbox-1"></th>
+			              	<th>4</th>
+			                <th>QQ</th>
+			                <td><a href="">www.qq.com</a></td>
+			                <td>社交网站</td>
+			                
+			                <td>通过</td>
+			                <td>
+			                 <input onclick="window.location='blogroll_update.html';" class="btn btn-success radius size-S" type="button" value="修改">&nbsp
+			                 <input class="btn btn-danger radius size-S" type="button" value="删除">
+			                </td>
+			                
+			              </tr>
+			              <tr>
+			              <th><input type="checkbox" id="checkbox-1"></th>
+			              	<th>5</th>
+			                <th>易申网</th>
+			                <td><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3194190233,1159762931&fm=15&gp=0.jpg"></td>
+			                <td>企业网站</td>
+			                
+			                <td>通过</td>
+			                <td>
+			                 <input onclick="window.location='blogroll_update.html';" class="btn btn-success radius size-S" type="button" value="修改">&nbsp
+			                <input class="btn btn-danger radius size-S" type="button" value="删除">
+			                </td>
+			                
+			              </tr>
+
+
+			            </tbody>
+    				</table>
+<!--     				<div style="height:px;margin:px ;">
+<span id="spanFirst">第一页</span>
+<span id="spanPre">上一页</span>
+<span id="spanNext">下一页</span>
+<span id="spanLast">最后一页</span>
+第<span id="spanPageNum"></span>页/共
+<span id="spanTotalPage"></span>页
+</div> -->
+</div>
+<script type="text/javascript">
+var theTable = document.getElementById("table");
+var totalPage = document.getElementById("spanTotalPage");
+var pageNum = document.getElementById("spanPageNum");
+var spanPre = document.getElementById("spanPre");
+var spanNext = document.getElementById("spanNext");
+var spanFirst = document.getElementById("spanFirst");
+var spanLast = document.getElementById("spanLast");
+var numberRowsInTable = theTable.rows.length;
+var pageSize = ;
+var page = ;
+//下一页
+function next() {
+hideTable();
+currentRow = pageSize * page;
+maxRow = currentRow + pageSize;
+if ( maxRow > numberRowsInTable )
+maxRow = numberRowsInTable;
+for ( var i = currentRow; i< maxRow; i++ ) {
+theTable.rows[i].style.display = '';
+}
+page++;
+if ( maxRow == numberRowsInTable ){
+nextText();
+lastText();
+}
+showPage();
+preLink();
+firstLink();
+}
+//上一页
+function pre() {
+hideTable();
+page--;
+currentRow = pageSize * page;
+maxRow = currentRow - pageSize;
+if ( currentRow > numberRowsInTable )
+currentRow = numberRowsInTable;
+for ( var i = maxRow; i< currentRow; i++ ) {
+theTable.rows[i].style.display = '';
+}
+if ( maxRow == ) {
+preText();
+firstText();
+}
+showPage();
+nextLink();
+lastLink();
+}
+//第一页
+function first() {
+hideTable();
+page = ;
+for ( var i = ; i<pageSize; i++ ) {
+theTable.rows[i].style.display = '';
+}
+showPage();
+preText();
+nextLink();
+lastLink();
+}
+//最后一页
+function last() {
+hideTable();
+page = pageCount();
+currentRow = pageSize * (page - );
+for ( var i = currentRow; i<numberRowsInTable; i++ ) {
+theTable.rows[i].style.display = '';
+}
+showPage();
+preLink();
+nextText();
+firstLink();
+}
+function hideTable() {
+for ( var i = ; i<numberRowsInTable; i++ ) {
+theTable.rows[i].style.display = 'none';
+}
+}
+function showPage() {
+pageNum.innerHTML = page;
+}
+//总共页数
+function pageCount() {
+var count = ;
+if ( numberRowsInTable%pageSize != ) count = ; 
+return parseInt(numberRowsInTable/pageSize) + count;
+}
+//显示链接
+function preLink() { spanPre.innerHTML = "<a href='javascript:pre();'>上一页</a>"; }
+function preText() { spanPre.innerHTML = "上一页"; }
+function nextLink() { spanNext.innerHTML = "<a href='javascript:next();'>下一页</a>"; }
+function nextText() { spanNext.innerHTML = "下一页"; }
+function firstLink() { spanFirst.innerHTML = "<a href='javascript:first();'>第一页</a>"; }
+function firstText() { spanFirst.innerHTML = "第一页"; }
+function lastLink() { spanLast.innerHTML = "<a href='javascript:last();'>最后一页</a>"; }
+function lastText() { spanLast.innerHTML = "最后一页"; }
+//隐藏表格
+function hide() {
+for ( var i = pageSize; i<numberRowsInTable; i++ ) {
+theTable.rows[i].style.display = 'none';
+}
+totalPage.innerHTML = pageCount();
+pageNum.innerHTML = '';
+nextLink();
+lastLink();
+}
+hide();
+</script>
+				</div>
+			</div>
+			  <div class="btn-group" align="center" style="margin-top:15px; ">
+						  <span class="btn btn-default radius">上一页</span>
+						  <span class="btn btn-primary radius">1</span>
+						  <span class="btn btn-default radius">2</span>
+						  <span class="btn btn-default radius">3</span>
+						  <span class="btn btn-default radius">4</span>
+						  <span class="btn btn-default radius">5</span>
+						  <span class="btn btn-default radius">6</span>
+						  <span class="btn btn-default radius">...</span>
+						  <span class="btn btn-default radius">下一页</span>
+						</div>     
+			 
+		</div>
+		<footer class="footer mt-20">
+			<div class="container">
+				<nav class="footer-nav">
+					<a target="_blank" href="http://www.h-ui.net/aboutHui.shtml">关于H-ui</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/copyright.shtml">软件著作权</a>
+					<span class="pipe">|</span>
+					<a target="_blank" href="http://www.h-ui.net/juanzeng.shtml">感谢捐赠</a>
+				</nav>
+				<p>Copyright &copy;2013-2017 H-ui.net All Rights Reserved. <br>
+					<a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">京ICP备15015336号-1</a>
+					<br>
+					未经允许，禁止转载、抄袭、镜像<br>
+					用心做站，做不一样的站</p>
+			</div>
+		</footer>
+	</div>
+</div>
+ 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+
+
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->

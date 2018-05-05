@@ -1,0 +1,18 @@
+<?php
+namespace app\admin\controller;
+
+use think\Controller;
+class aduser extends Controller{
+    public function role(){
+        return $this->fetch('./admintpl/admin-role.html');
+    }
+    public function rule(){
+        return $this->fetch('./admintpl/admin-permission.html');
+    }
+    public function list(){
+        return $this->fetch('./admintpl/admin-list.html');
+    }
+	public function list(){
+        return $this->fetch('./admintpl/welcome.html');
+    }
+}

@@ -1,0 +1,106 @@
+﻿<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+	<!--/meta 作为公共模版分离出去-->
+	{include file="public/header"}
+	<!--/_header 作为公共模版分离出去-->
+
+	<!--_menu 作为公共模版分离出去-->
+	{include file="public/menu"}
+	<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">栏目管理</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">生成静态页</span>
+			</div>
+		</nav>
+	<div class="container ui-sortable">
+			<h1>生成静态页</h1>
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<!--<span class="f-l">左侧标题</span>-->
+					<!--<span class="f-r">右侧标题</span>-->
+				</div>
+				<div class="panel-body">
+					<table >
+						<tr>
+							<th style="font-weight: bold;">按照模型更新</th>
+							<th style="font-weight: bold;">操作</th>
+						</tr>
+
+						<tr>
+							<td width="30%">
+								<div class="static_div">
+									<p class="static_modal" up-id="1">不限模型</p>
+									<p class="static_modal" up-id="2">文章模型</p>
+									<p class="static_modal" up-id="3">图片模型</p>
+								</div>
+							</td>
+							<td>
+								<input class="btn btn-primary size-M radius" type="button" value="开始更新">
+							</td>
+						</tr>
+					</table>
+				</div>
+				</div>
+			</div>
+			       
+</section>
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去--> 
+
+<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="__STATIC__/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="__STATIC__/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+        var upIdArr=[];
+        var upIdStr='';
+		$('.static_modal').click(function () {	//提交更新时提交upIdStr字符串 请把属性up-id设置为栏目id
+            upIdStr='';
+		    if($(this).attr('style')){
+                $(this).attr('style','');
+                upIdArr[$(this).attr('up-id')]=undefined;
+			}else{
+                $(this).attr('style','background:#CCC');
+                upIdArr[$(this).attr('up-id')]=$(this).attr('up-id');
+			}
+			$.each(upIdArr,function (index,val) {
+				if(val){
+				    upIdStr+=val+',';
+				}
+            })
+            upIdStr=upIdStr.substr(0,upIdStr.length-1);  //最终的upIdStr
+        })
+    });
+</script>
+</body>
+</html>

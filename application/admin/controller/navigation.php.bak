@@ -1,0 +1,65 @@
+<?php
+namespace app\admin\controller;
+
+use think\Controller;
+
+class Navigation extends Controller
+{
+	
+
+	public function add()
+	{
+        return $this->fetch('./admintpl/add.html');
+    }
+	public function addadvert()
+	{
+        return $this->fetch('./admintpl/addadvert.html');
+    }
+	//导航管理 列表页
+	public function listnav()
+	{
+		$table=db('dz_nav');		
+		$list=$table->select();
+		$this->assign('list',$list);
+        return $this->fetch('./admintpl/listnav.html');
+    }
+	//导航管理 列表编辑页
+	public function upnav()
+	{
+		$table=db('dz_nav');
+		$id=input('id');
+		$list=$table->where('id='.$id)->find();		
+		$this->assign('list',$list);
+		$lis=$table->where('top')->select();
+		$this->assign('lis',$lis);
+        return $this->fetch('./admintpl/upnav.html');
+    }
+	//导航管理 列表编辑提交
+	public function do_upnav()
+	{
+		$table=db('dz_nav');
+		$data=input();
+		$info=$table->where('id='.$data['id'])->update($data);
+		if($info)
+		{
+			$this->success('修改成功','Navigation/listnav');
+		}elseif($info=='false'){
+			$this->success('未进行修改','Navigation/listnav');
+		}else{
+			$this->error('修改失败');
+		}
+	
+	}
+	public function renav()
+	{
+        return $this->fetch('./admintpl/renav.html');
+    }
+	public function addnav()
+	{
+        return $this->fetch('./admintpl/addnav.html');
+    }
+
+}
+
+
+?>

@@ -1,0 +1,8 @@
+admin_login.html        	后台登录页面
+index.html   			后台首页
+blogroll_list.html    		友情链接列表页面
+blogroll_add.html     		友情链接的添加页面
+blogroll_update.html		友情链接修改页面
+rubbish_bin.html  		回收站页面
+
+			

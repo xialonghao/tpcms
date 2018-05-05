@@ -1,0 +1,316 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>H-ui.admin v3.0</title>
+<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="index.html">DZ.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">DZ</a> 
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span> 
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+			<nav class="nav navbar-nav">
+				<ul class="cl">
+					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" onclick="article_add('添加资讯','article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+							<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
+							<li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+							<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+				<ul class="cl">
+					<li>超级管理员</li>
+					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
+							<li><a href="#">切换账户</a></li>
+							<li><a href="#">退出</a></li>
+				</ul>
+			</li>
+					<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+					<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
+							<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+							<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+							<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+							<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+							<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+</div>
+</header>
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<aside class="Hui-aside">
+	
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 内容管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="content_list.html" title="内容列表">内容列表</a></li>
+					<li><a href="recycle_page.html" title="回收站">回收站</a></li>
+		</ul>
+	</dd>
+</dl>
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 栏目管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="column_list.html" title="栏目列表">栏目列表</a></li>
+		</ul>
+	</dd>
+</dl>
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe620;</i> 模板管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="templet_page.html" title="选择模板">选择模板</a></li>
+					
+					<li><a href="static_page.html" title="生成静态页面">生成静态页面</a></li>
+		</ul>
+	</dd>
+</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe622;</i> 链接管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="blogroll_list.html" title="链接列表">链接列表</a></li>
+					<li><a href="rubbish_bin.html" title="回收站">回收站</a></li>
+		</ul>
+	</dd>
+</dl>
+
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 前台用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="userlist.html" title="用户列表 ">用户列表 </a></li>
+					<li><a href="admin-permission.html" title="用户等级列表">用户等级列表</a></li>
+					<li><a href="admin-list.html" title="用户解禁列表">用户解禁列表</a></li>
+					<li><a href="recycle bin.html" title="回收站">回收站</a></li>
+		</ul>
+	</dd>
+</dl>
+	<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 广告位管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="listadvert.html" title="广告列表 ">广告列表 </a></li>
+					<li><a href="listbanner.html" title="回收站">回收站</a></li>
+		</ul>
+	</dd>
+</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 后台用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="admin-list1.html" title="广告列表 ">后台用户列表 </a></li>
+					<li><a href="admin-del.html" title="回收站">回收站</a></li>
+		</ul>
+	</dd>
+</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 权限管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="admin-permission.html" title="权限列表 ">权限列表 </a></li>
+		</ul>
+	</dd>
+</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 用户组管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="admin-role-list.html" title="用户组列表 ">用户组列表 </a></li>
+					<li><a href="admin-role-del.html" title="回收站 ">回收站 </a></li>
+		</ul>
+	</dd>
+</dl>
+	<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 客服管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="list.html" title="客服列表 ">客服列表 </a></li>
+					<li><a href="huishouzhan.html" title="回收站 ">回收站 </a></li>
+		</ul>
+	</dd>
+</dl>
+<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="system-base.html" title="系统设置">系统设置</a></li>
+					<!-- <li><a href="system-category.html" title="栏目管理">栏目管理</a></li> -->
+					<!-- <li><a href="system-data.html" title="数据字典">数据字典</a></li> -->
+					<!-- <li><a href="system-shielding.html" title="屏蔽词">屏蔽词</a></li> -->
+					<!-- <li><a href="system-log.html" title="系统日志">系统日志</a></li> -->
+				</ul>
+			</dd>
+		</dl>
+</div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">Banner</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">Banner列表</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h1>Banner列表</h1> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+					<span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a>
+					<a href="admin-add.html"  class="btn btn-primary radius"><i class="icon-plus"></i> 添加Banner</a></span>
+					<!-- <span class="r">共有数据：<strong>88<> 条</span> -->
+					<span class="r"><a href="javascript:;" onclick="huishou()" class="btn btn-danger radius"><i class="icon-trash"></i>进入回收站</a></span>
+				 </div>
+				<!-- <div class="panel-header clearfix">
+					<span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 批量删除</a></span>
+					<span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="icon-trash"></i> 添加管理员</a></span>
+					<span class="r">共有数据：<strong>54</strong> 条</span>
+				</div> -->
+				<div class="panel-body">
+					
+  <table class="table table-border table-bordered table-bg table-hover table-sort">
+			    <thead>
+			    <tr>
+        <th scope="col" colspan="7">banner列表</th>
+      </tr>
+			      <tr class="text-c">
+			        <th width="10"><input name="" type="checkbox" value=""></th>
+			        <th width="20">ID</th>
+			        <th width="30">分类</th>
+			        <th width="80">banner缩略图</th>
+			        <th width="60">图片名称</th>
+			        <th width="40">发布状态</th>
+			        <th width="20">操作</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr class="text-c">
+			        <td><input name="" type="checkbox" value=""></td>
+			        <td>1</td>
+			        <td>分类名称</td>
+			        <td><a href="picture-show.html"><img src="temp/jiaju.jpg"></a></td>
+			        <td class="text-l"><a class="maincolor" href="picture-show.html">现代简约 白色</a></td>
+			        <td><span class="label label-success radius">已发布</span></td>
+			        <td class="f-14 picture-manage">
+						<span>
+							<a href="#" title="编辑"><input class="btn btn-success radius size-MINI" type="button" value="编辑"></a>
+						</span>
+						<span>
+							<a href="#" title="删除"><input class="btn btn-danger radius size-MINI" type="button" value="删除"></a>
+						</span>
+			        </td>
+			      </tr>
+			      <tr class="text-c">
+			        <td><input name="" type="checkbox" value=""></td>
+			        <td>2</td>
+			        <td>分类名称</td>
+			        <td><a href="picture-show.html"><img src="temp/jiaju.jpg"></a></td>
+			        <td class="text-l"><a class="maincolor" href="picture-show.html">现代简约 白色</a></td>
+			        <td class="picture-status"><span class="label label-danger radius">未发布</span></td>
+			        <td class="f-14 picture-manage">
+						<span>
+							<a href="#" title="编辑"><input class="btn btn-success radius size-MINI" type="button" value="编辑"></a>
+						</span>
+						<span>
+							<a href="#" title="删除"><input class="btn btn-danger radius size-MINI" type="button" value="删除"></a>
+						</span>
+			        </td>
+			      </tr>
+			      <tr class="text-c">
+			        <td><input name="" type="checkbox" value=""></td>
+			        <td>3</td>
+			        <td>分类名称</td>
+			        <td><a href="picture-show.html"><img src="temp/jiaju.jpg"></a></td>
+			        <td class="text-l"><a class="maincolor" href="picture-show.html">现代简约 白色</a></td>
+			        <td class="picture-status"><span class="label label-success radius">已发布</span></td>
+			        <td class="f-14 picture-manage">
+						<span>
+							<a href="#" title="编辑"><input class="btn btn-success radius size-MINI" type="button" value="编辑"></a>
+						</span>
+						<span>
+							<a href="#" title="删除"><input class="btn btn-danger radius size-MINI" type="button" value="删除"></a>
+						</span>
+			        </td>
+			      </tr>
+
+			    </tbody>
+			  </table> 
+<div id="pageNav" class="pageNav"> <a href="javascript:pageNav.go(1,13);" class="pageNum">&lt;上一页</a>  <a href="javascript:pageNav.go(1,13);" class="pageNum">1</a>  <b>2</b>  <a href="javascript:pageNav.go(3,13);" class="pageNum">3</a>  <a href="javascript:pageNav.go(4,13);" class="pageNum">4</a>  <a href="javascript:pageNav.go(5,13);" class="pageNum">5</a>  <a href="javascript:pageNav.go(6,13);" class="pageNum">6</a> <span class="mor">...</span> <a href="javascript:pageNav.go(13,13);" class="pageNum">13</a>  <a href="javascript:pageNav.go(3,13);" class="pageNum">下一页&gt;</a> </div>
+</div>
+				</div>
+			</div>
+</section>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.page.js"></script> 
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+
+<!--此乃百度统计代码，请自行删除-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--/此乃百度统计代码，请自行删除-->
+</body>
+</html>

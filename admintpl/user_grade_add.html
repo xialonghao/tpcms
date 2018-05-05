@@ -1,0 +1,161 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/public/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/public/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/public/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/public/lib/Hui-iconfont/1.0.8/iconfont.min.css" />
+<!--[if lt IE 9]>
+<link href="/public/static/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="/public/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header{ cursor:move}
+</style>
+<title>Hi，H-ui v3.1</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+</head>
+<body ontouchstart>
+ 
+<div class="containBox"> 
+	 
+	<div class="wap-container">
+		 
+		<nav class="breadcrumb">
+			<div class="container">
+				<i class="Hui-iconfont">&#xe67f;</i>
+				<a href="/" class="c-primary">首页</a>
+				<span class="c-gray en">&gt;</span>
+				<a href="#">组件</a>
+				<span class="c-gray en">&gt;</span>
+				<span class="c-gray">当前页面</span>
+			</div>
+		</nav>
+		<div class="container ui-sortable">
+			<h3>用户等级添加</h3> 
+			<div class="panel panel-default">
+				<div class="panel-header clearfix">
+				
+				</div>
+				<div class="panel-body">
+					<form action="{:url('Member/usergradedoadd')}" method="post" class="form form-horizontal responsive" id="form-admin-add">
+      	<table class="table table-border table-bordered table-bg">
+
+        	<tbody>
+
+
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 等级名称：</th>
+            <td>		
+		     <div class="formControls col-xs-8">
+			<input id="nickname" style="width: 280px;"  type="text" class="input-text" placeholder="4~16个字符，字母/中文/数字/下划线"  name="nickname">
+	        </div>
+			</td>
+          </tr>
+
+
+          <tr>
+          <th class="text-r"><span class="c-red">*</span> 所属等级:</th>
+           <td>
+		<span class="select-box">
+       <select  style="width: 280px; " class="select" name="demo1">
+        <option value="" selected>默认等级</option>
+         {volist id="ls" name="vipname"}
+        <option  value="{$ls.id}">{$ls.rank} </option>
+		 {/volist}
+      </select>
+    </span></td>
+          </tr>       
+
+          <tr>
+            <th></th>
+            <td>
+			<button class="btn btn-success radius" type="submit">
+			<i class="icon-ok"></i> 确定</button>
+			</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </form>
+				</div>
+			</div>
+			       
+			 
+		</div>
+	</div>
+</div>
+ 
+ 
+<script type="text/javascript" src="./public/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="./public/lib/jquery-ui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./public/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="./public/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="./public/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="./public/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="./public/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-admin-add").validate({
+		rules:{
+			adminName:{
+				required:true,
+				minlength:4,
+				maxlength:16
+			},
+			password:{
+				required:true,
+			},
+			password2:{
+				required:true,
+				equalTo: "#password"
+			},
+			sex:{
+				required:true,
+			},
+			phone:{
+				required:true,
+				isPhone:true,
+			},
+			email:{
+				required:true,
+				email:true,
+			},
+			adminRole:{
+				required:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name 
+
+);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script>
+</body>
+</html>
+<!--H-ui前端框架提供前端技术支持 h-ui.net @2017-01-01 -->
